@@ -4,7 +4,7 @@ use clap::{App, Arg};
 fn main() {
     let matches = App::new("My RPN program")
         .version("1.0.0")
-        .author("Your name")
+        .author("Shimmy")
         .about("Super awesome sample RPN calculator")
         .arg(
             Arg::new("formula_file")
@@ -21,6 +21,7 @@ fn main() {
                 .required(false),
         )
         .get_matches();
+    // マッチしたパターンに応じてコードを実行する
     match matches.value_of("formula_file") {
         Some(file) => println!("File specified: {}", file),
         None => println!("No file specified"),
