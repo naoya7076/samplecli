@@ -39,9 +39,24 @@ fn main() {
     }
 }
 
-fn run(reader: BufReader<File>, _verbose: bool) {
+fn run<R: BufRead>(reader: R, verbose: bool) {
+    let calc = RpnCalculator::new(verbose);
     for line in reader.lines() {
         let line = line.unwrap();
-        println!("{}", line)
+        let answer = calc.eval(&line);
+        println!("{}", answer)
+    }
+}
+
+struct RpnCalculator(bool);
+
+impl RpnCalculator {
+    // newを使うことで方から関数を呼ぶ形式でで意義される
+    pub fn new(verbose: bool) -> Self {
+        Self(verbose)
+    }
+
+    pub fn eval(&self, formula: &str) -> i32 {
+        0
     }
 }
