@@ -122,4 +122,11 @@ mod tests {
         assert_eq!(calc.eval("2 3 /"), 0);
         assert_eq!(calc.eval("2 3 %"), 2);
     }
+
+    #[should_panic]
+    #[test]
+    fn test_ng() {
+        let calc = RpnCalculator::new(false);
+        calc.eval("1 1 ^");
+    }
 }
