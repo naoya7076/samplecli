@@ -1,7 +1,7 @@
 fn main() {
   // メソッド記法
   // https://doc.rust-jp.rs/book-ja/ch05-03-method-syntax.html
-  let dog = Doc {};
+  let dog = Dog {};
   let cat = Cat {};
   show_animal_data(dog);
   show_animal_data(cat);
