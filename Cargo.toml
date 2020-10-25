@@ -1,5 +1,5 @@
 [package]
-name = "samplecli"
+name = "rpncalc"
 version = "0.1.0"
 authors = ["naoya7076 <naoya7076@gmail.com>"]
 edition = "2018"
